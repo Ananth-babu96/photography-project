@@ -1,0 +1,130 @@
+@use "../../styles/style.scss" as *;
+@use "../../styles/breakPoints.scss" as *;
+.gallery {
+   padding: 16px;
+   position: relative;
+   @include bpMax(s) {
+      padding: 72px 0 0;
+   }
+   &_title {
+      text-align: center;
+      margin: 32px 0;
+
+      & h1 {
+         color: $baseColor;
+      }
+   }
+   &_section {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 200px 300px;
+      justify-content: center;
+      grid-auto-flow: dense;
+
+      @include bpMax(m) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+      @include bpMax(s) {
+         grid-template-columns: repeat(2, 1fr);
+         padding: 0 10px;
+      }
+
+      & div {
+         width: 100%;
+         position: relative;
+         cursor: pointer;
+         & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+         }
+
+         &:nth-child(1),
+         &:nth-child(10),
+         &:nth-child(12),
+         &:nth-child(15),
+         &:nth-child(16),
+         &:nth-child(22),
+         &:nth-child(24),
+         &:nth-child(28),
+         &:nth-child(31),
+         &:nth-child(34),
+         &:nth-child(39),
+         &:nth-child(41),
+         &:nth-child(45),
+         &:nth-child(48),
+         &:nth-child(52),
+         &:nth-child(56),
+         &:nth-child(60),
+         &:nth-child(65),
+         &:nth-child(69),
+         &:nth-child(76),
+         &:nth-child(79),
+         &:nth-child(81),
+         &:nth-child(85),
+         &:nth-child(88) {
+            grid-column: span 2;
+
+            @include bpMax(s) {
+               grid-column: span 1;
+            }
+         }
+         &:nth-child(1),
+         &:nth-child(4),
+         &:nth-child(8),
+         &:nth-child(13),
+         &:nth-child(18),
+         &:nth-child(22),
+         &:nth-child(25),
+         &:nth-child(29),
+         &:nth-child(34),
+         &:nth-child(36),
+         &:nth-child(39),
+         &:nth-child(41),
+         &:nth-child(46),
+         &:nth-child(50),
+         &:nth-child(53),
+         &:nth-child(57),
+         &:nth-child(60),
+         &:nth-child(63),
+         &:nth-child(67),
+         &:nth-child(70),
+         &:nth-child(76),
+         &:nth-child(78),
+         &:nth-child(81),
+         &:nth-child(85),
+         &:nth-child(89) {
+            grid-row: span 2;
+         }
+      }
+   }
+   &_fullscreen_image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 4;
+      display: none;
+
+      & p {
+         color: $green;
+         position: absolute;
+         font-size: 32px;
+         bottom: 0;
+         left: 50%;
+      }
+
+      &.show {
+         display: flex;
+         justify-content: center;
+
+         & img {
+            height: 100%;
+         }
+      }
+   }
+}

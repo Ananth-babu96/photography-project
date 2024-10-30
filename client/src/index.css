@@ -1,0 +1,39 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Cormorant Garamond", serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   padding-top: 72px;
+   font-variant-numeric: lining-nums;
+   font-feature-settings: "lnum";
+   scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+p {
+   font-size: 20px;
+   /* line-height: 32px; */
+}
+a {
+   text-decoration: none;
+   color: #fff;
+}
+button {
+   font-family: "Cormorant Garamond", serif;
+}
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+}
+
+@media (max-width: 768px) {
+   body {
+      padding-top: 62px;
+   }
+}

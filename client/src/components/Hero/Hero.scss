@@ -1,0 +1,84 @@
+@use "../../styles/style.scss" as *;
+@use "../../styles/breakPoints.scss" as *;
+
+.home {
+   &_hero {
+      height: 80vh;
+      width: 100%;
+      background-image: url("../../accets/images/hero-bg-2.webp");
+
+      opacity: 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      @include bpMax(m) {
+         background-image: url("../../accets/images/mobile-hero-background.webp");
+         background-attachment: scroll;
+
+         height: 80vh;
+         flex-direction: column;
+         align-items: flex-start;
+      }
+      @include bpMax(s) {
+         height: 60vh;
+      }
+
+      &_text {
+         width: 55%;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 16px;
+         color: #fff;
+         margin-left: 32px;
+
+         @include bpMax(l) {
+            width: 60%;
+         }
+         @include bpMax(m) {
+            display: none;
+         }
+
+         h1 {
+            font-size: 52px;
+            color: #fff;
+            @include bpMax(m) {
+               font-size: 32px;
+            }
+         }
+         p {
+            font-size: 28px;
+            font-family: "Great Vibes", cursive;
+         }
+      }
+   }
+   & .mobile_title {
+      display: none;
+      margin: 32px 0;
+      & h1 {
+         font-size: 38px;
+         color: $baseColor;
+      }
+      & p {
+         font-size: 16px;
+         line-height: 28px;
+      }
+
+      @include bpMax(m) {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         padding: 0 16px;
+         justify-content: center;
+         gap: 16px;
+      }
+   }
+}

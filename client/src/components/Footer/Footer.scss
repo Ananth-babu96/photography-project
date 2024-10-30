@@ -1,0 +1,67 @@
+@use "../../styles/style.scss" as *;
+@use "../../styles/breakPoints.scss" as *;
+.footer {
+   background: $offWhite;
+
+   font-family: "DM Sans", sans-serif;
+   padding: 32px;
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   @include bpMax(m) {
+      padding: 16px;
+   }
+
+   &_details {
+      display: flex;
+      justify-content: space-evenly;
+
+      @include bpMax(m) {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      & .footer_contact {
+         @include bpMax(m) {
+            margin-top: 32px;
+            width: 100%;
+         }
+         & div {
+            display: flex;
+            align-items: center;
+            margin: 18px 0;
+
+            & span {
+               margin-left: 10px;
+            }
+         }
+      }
+
+      & .map {
+         border-bottom: 2px solid #000;
+         padding-bottom: 32px;
+         @include bpMax(m) {
+            width: 100%;
+         }
+         & p {
+            font-size: 16px;
+         }
+      }
+   }
+   .copy_rights {
+      margin: 32px 0 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+
+      & span {
+         flex-shrink: 0;
+         @include bpMax(m) {
+            font-size: 14px;
+         }
+      }
+   }
+}

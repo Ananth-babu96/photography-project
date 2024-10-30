@@ -1,0 +1,22 @@
+$breakPoints: (
+   "s": "576px",
+   "m": "768px",
+   "l": "993px",
+   "xl": "1164px",
+);
+
+@mixin bpMax($size) {
+   @media (max-width: map-get($breakPoints,$size)) {
+      @content;
+   }
+}
+
+@mixin bpMin($size) {
+   @media (min-width: map-get($breakPoints,$size)) {
+      @content;
+   }
+}
+// Small (Mobile): 0px - 576px
+// Medium (Tablet): 577px - 768px
+// Large (Laptop/Desktop): 769px - 992px
+// Extra Large (Large Desktops): 993px and up

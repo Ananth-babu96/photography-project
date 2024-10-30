@@ -1,0 +1,28 @@
+@use "../../styles/breakPoints.scss" as *;
+.slider {
+   display: flex;
+   overflow: hidden;
+   height: 60px;
+   align-items: center;
+   gap: 18px;
+   position: relative;
+   user-select: none;
+
+   &_container {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 18px;
+      animation: slide 10s linear infinite;
+   }
+}
+
+@keyframes slide {
+   from {
+      transform: translateX(0);
+   }
+   to {
+      transform: translateX(calc(-100% - 18px));
+   }
+}

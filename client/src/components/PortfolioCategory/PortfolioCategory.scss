@@ -1,0 +1,21 @@
+@use "../../styles/breakPoints.scss" as *;
+.category {
+   padding-top: 82px;
+
+   &_wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 27%));
+      justify-content: center;
+      gap: 16px;
+      @include bpMax(s) {
+         grid-template-columns: repeat(1, 100%);
+      }
+
+      & div {
+         width: 100%;
+         & img {
+            width: 100%;
+         }
+      }
+   }
+}
