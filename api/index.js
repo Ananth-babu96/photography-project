@@ -8,7 +8,11 @@ dotenv.config();
 const server = express();
 server.use(express.static("public"));
 
-server.use(cors({ origin: "http://localhost:3000" }));
+server.use(
+   cors({
+      origin: "https://ananth-babu96.github.io/photography-project-client/#/",
+   })
+);
 server.use(express.json());
 
 const db = mysql.createConnection({
