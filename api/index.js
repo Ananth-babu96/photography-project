@@ -10,7 +10,7 @@ server.use(express.static("public"));
 
 server.use(
    cors({
-      origin: "http://localhost:3000",
+      origin: "https://Ananth-babu96.github.io/photography-project-client",
    })
 );
 server.use(express.json());
@@ -32,6 +32,7 @@ server.get("/", (req, res) => {
       }
    });
 });
-server.listen(5000, () => console.log("running at 5000"));
+const port = process.env.PORT;
+server.listen(port, () => console.log("running at 5000"));
 
 console.log(process.env.USER);
