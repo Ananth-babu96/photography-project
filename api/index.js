@@ -10,7 +10,7 @@ server.use(express.static("public"));
 
 server.use(
    cors({
-      origin: "https://ananth-babu96.github.io",
+      origin: "*",
    })
 );
 server.use(express.json());
@@ -33,6 +33,4 @@ server.get("/", (req, res) => {
    });
 });
 const port = process.env.PORT;
-server.listen(port, () => console.log("running at 5000"));
-
-console.log(process.env.USER);
+server.listen(port, () => console.log(`running at ${port}`));
