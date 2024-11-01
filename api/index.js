@@ -10,7 +10,7 @@ server.use(express.static("public"));
 
 server.use(
    cors({
-      origin: "https://Ananth-babu96.github.io/photography-project-client",
+      origin: "https://ananth-babu96.github.io/photography-project-client",
    })
 );
 server.use(express.json());
